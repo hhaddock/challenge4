@@ -1,17 +1,26 @@
+<<<<<<< HEAD
 body {
   background-color: #2574A9
 }
 
+=======
+>>>>>>> 7867d13496a3d192ddf78b68bbe52feeeb5498bb
 .line-true {
   color: red;
   font-weight: bold;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7867d13496a3d192ddf78b68bbe52feeeb5498bb
 .line-false {
   	text-decoration: line-through;
   	color: lightgrey;
 }
+<<<<<<< HEAD
 
 .jumbotron {
   border-radius: 10px;
 }
+=======
+>>>>>>> 7867d13496a3d192ddf78b68bbe52feeeb5498bb
