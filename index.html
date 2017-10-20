@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="challenge4App" lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="services.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Challenge 4</title>
+  </head>
+  <body>
+    <div ng-controller="StudentController as studentList">
+      <div class="container jumbotron">
+        <h1 class="text-center">Challenge 4</h1>
+        <hr>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">Add Student</div>
+            <div class="panel-body">
+              <form class="" ng-submit="studentList.addStudent()">
+                <div class="col-md-6">
+                  <input type="number" ng-model="studentList.studentNumber" id="studentNumber" class="form-control" placeholder="Student Number">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" ng-model="studentList.studentName" id="studentName" class="form-control" placeholder="Student Name">
+                </div>
+                <br><br><br>
+                <div class="col-md-12">
+                  <input type="text" ng-model="studentList.studentAddress" id="studentAddress" class="form-control" placeholder="Student Address">
+                </div>
+                <br><br><br>
+                <div class="col-md-9">
+                  <input type="number" ng-model="studentList.studentPhoneNumber" id="studentPhoneNumber" class="form-control" placeholder="Phone Number">
+                </div>
+                <div class="col-md-3">
+                  <input type="number" ng-model="studentList.studentGPA" id="studentGPA" class="form-control" placeholder="GPA">
+                </div>
+                <br><br><br>
+                <div class="col-md-12">
+                  <input type="text" ng-model="studentList.studentAcademicPlan" id="studentAcademicPlan" class="form-control" placeholder="Student Academic Plan">
+                </div>
+                <br><br><br>
+                <div class="col-md-12">
+                  <input type="text" ng-model="studentList.studentLevel" id="studentLevel" class="form-control" placeholder="Student Level">
+                </div>
+                <br><br><br>
+                <div class="col-md-12">
+                  <input class="btn btn-primary btn-block" type="submit" value="Add Student">
+                  <br>
+                  <button type="button" ng-click="studentList.archive()" class="btn btn-danger btn-block">Delete Inactive Students</button><br>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">Student List</div>
+            <div class="panel-body">
+              <span>{{ studentList.remaining() }} of {{ studentList.students.length }} active </span><br>
+              <div class="list-group">
+                <li ng-repeat="student in studentList.students track by $index" class="list-group-item">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <strong>Student Number: </strong><span class="line-{{ student.active }}">{{ student.studentNumber }}</span><br>
+                      <strong>Student Name: </strong><span class="line-{{ student.active }}">{{ student.studentName }}</span><br>
+                      <strong>Student Address: </strong><span class="line-{{ student.active }}">{{ student.studentAddress }}</span><br>
+                      <strong>Phone Number: </strong><span class="line-{{ student.active }}">{{ student.studentPhoneNumber }}</span><br>
+                      <strong>Student GPA: </strong><span class="line-{{ student.active }}">{{ student.studentGPA }}</span><br>
+                      <strong>Academic Plan: </strong><span class="line-{{ student.active }}">{{ student.studentAcademicPlan }}</span><br>
+                      <strong>Student Level: </strong><span class="line-{{ student.active }}">{{ student.studentLevel }}</span>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="checkbox">
+                        <label><input type="checkbox" ng-model="student.active" ng-click="studentList.refresh(this)" value="">Toggle Active</label>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+.line-true {
+  color: red;
+  font-weight: bold;
+}
+.line-false {
+  	text-decoration: line-through;
+  	color: lightgrey;
+}
