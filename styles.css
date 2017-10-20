@@ -1,4 +1,17 @@
-.done-false {
+body {
+  background-color: #2574A9
+}
+
+.line-true {
+  color: red;
+  font-weight: bold;
+}
+
+.line-false {
   	text-decoration: line-through;
-  	color: grey;
+  	color: lightgrey;
+}
+
+.jumbotron {
+  border-radius: 10px;
 }
